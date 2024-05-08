@@ -1,0 +1,25 @@
+1.  Power spectrum and convolution
+
+    a.  Download the data “density.dat”, which is a 1024x1024 array.
+        The script “plot__density.py” can be used to load and plot the data.
+
+    b.  Apply 2D convolution using a Gaussian filter with σ = 10 cells.
+        Show the resulting image.
+
+    c.  Same as (b) but with σ = 100 cells.
+
+    d.  Compare the power spectra of the original data, (b), and (c). 
+        Discuss the results.
+
+    e.  [Notice]
+        i.  Use periodic boundary conditions.
+        ii. Use DFT instead of built-in routines (e.g., numpy.convolve) to compute both convolution and power spectra.
+----------------------------------------------------------------------------------------------------------------------
+a.  You can see the result in figure "fig__density.png".
+b.  You can see the result in figure "con_sigma10.png".
+c.  You can see the result in figure "con_sigma100.png".
+d.  You can see the result in figure "power_spectra.png".
+    從結果圖，我們可以發現經過convolution後的圖它的頻譜就像是original data的頻譜疊加Gaussian filter的頻譜。
+    而隨著我們σ愈大，圖中十字的線寬則愈窄。
+    我覺得是因為σ會決定我們Gaussian function的寬度，當σ愈大，則寬度（波長）愈大，峰值會愈來愈不突出。
+    進而使得空間中資訊被模糊化，就像是受到Gaussian function的影響愈深，所以將處理過後的圖經過傅立葉轉換後，在頻域中，十字會愈清晰。
