@@ -17,6 +17,7 @@ dy     = L/(N-1)               # spatial resolution
 dt      = cfl*dx**2.0/4      # time interval for data update
 
 
+
 # define a reference analytical solution
 def ref_func( x, y ):
     k = 2.0*np.pi/L   # wavenumber
